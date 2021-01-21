@@ -3,7 +3,7 @@
 # 研究所的作品
 
 # Covid-19 分類器
-![This is a alt text.](/images/COVIDI.png "This is a sample image.")
+![This is a alt text.](/images/COVID.png "This is a sample image.")
 
 
  👆Choose from the pictures in the mobile phone and recognize the pictures and finally save the pictures
