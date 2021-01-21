@@ -1,0 +1,7 @@
+include ':flag'
+include ':math'
+include ':abcd'
+include ':test'
+include ':app'
+project(':flag').projectDir = new File(rootDir, 'abcd/src/main/flag/')
+rootProject.name = "covid19_project"
