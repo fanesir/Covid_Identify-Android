@@ -6,17 +6,17 @@
 ![This is a alt text.](/images/COVID.png "This is a sample image.")
 
 
- 👆Choose from the pictures in the mobile phone and recognize the pictures and finally save the pictures
+ ### 👆Choose from the pictures in the mobile phone and recognize the pictures and finally save the pictures
  
  ![This is a alt text.](/images/COVIDII.png "This is a sample image.")
 
 
- 👆Choose from phone the pictures 。
+ ### 👆Choose from phone the pictures 。
  
   ![This is a alt text.](/images/COVIDIII.png "This is a sample image.")
 
 
- 👆Identify pictures  and show process time(ms)。
+ ### 👆Identify pictures  and show process time(ms)。
 
   
 
