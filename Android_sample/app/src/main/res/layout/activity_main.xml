@@ -22,39 +22,6 @@
     <!--        android:onClick="saveimage"-->
 
 
-
-    <LinearLayout
-        android:layout_width="405dp"
-        android:layout_height="52dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/add_img_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="圖片選擇" />
-
-        <Button
-            android:id="@+id/scan_image_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="辨識圖片" />
-        <Button
-            android:id="@+id/saveimagebutton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="saveimage"
-            android:text="儲存圖片" />
-
-    </LinearLayout>
-
-
     <ImageView
         android:id="@+id/such_image"
         android:layout_width="match_parent"
@@ -131,5 +98,37 @@
 
             app:menu="@menu/menulayout" />
     </androidx.drawerlayout.widget.DrawerLayout>
+
+    <LinearLayout
+        android:layout_width="405dp"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/add_img_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="圖片選擇" />
+
+        <Button
+            android:id="@+id/scan_image_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="辨識圖片" />
+
+        <Button
+            android:id="@+id/saveimagebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="saveimage"
+            android:text="儲存圖片" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
