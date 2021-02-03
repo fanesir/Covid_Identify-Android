@@ -357,6 +357,22 @@ public class MainActivity<onActivityResult> extends AppCompatActivity {
     }
 
     public void saveimage(View v) {
+
+        if (Build.VERSION.SDK_INT >= 23) {
+            int REQUEST_CODE_PERMISSION_STORAGE = 100;
+            String[] permissions = {
+                    Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            };
+
+            for (String str : permissions) {
+                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    this.requestPermissions(permissions, REQUEST_CODE_PERMISSION_STORAGE);
+                    return;
+                }
+            }
+        }
+
         if (bitmap == null) {
             Toast.makeText(MainActivity.this, "請先按下辨識圖片", Toast.LENGTH_LONG).show();
             return;
@@ -369,27 +385,29 @@ public class MainActivity<onActivityResult> extends AppCompatActivity {
 
         FileOutputStream fos = null;
         File sdCard = Environment.getExternalStorageDirectory();//拿到SD卡資料
-        File directory = new File(sdCard.getAbsolutePath() + "/test_img");//在SD卡放置這個路徑
+        File directory = new File(sdCard.getAbsolutePath() + "/Test_img");//在SD卡放置這個路徑
+
         directory.mkdir();//創建資料夾
         String fileName = String.format("%d.png", System.currentTimeMillis());//創建名稱
         File outFile = new File(directory, fileName);//給予路徑跟名稱
+        Log.i("sdpath",outFile+"");
 
-        Toast.makeText(this, "影像儲存成功", Toast.LENGTH_LONG).show();
         try {
             fos = new FileOutputStream(outFile);//此張照片放進來
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);//壓縮
             fos.flush();
+            fos.close();
 
             Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);//掃描指定文件
             intent.setData(Uri.fromFile(outFile));//給予資料
             sendBroadcast(intent);//刷新
 
         } catch (FileNotFoundException e) {
-            Log.d(TAG + "savefirst", e.getMessage());
+            Log.i(TAG + "savefirst", e.getMessage());
 
             e.printStackTrace();
         } catch (IOException e) {
-            Log.d(TAG + "savefirst", e.getMessage());
+            Log.i(TAG + "savefirst", e.getMessage());
             e.printStackTrace();
 
         }
